@@ -1,6 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+
+// Import Swiper styles
+import 'swiper/css';
+
 
 // components .....
 import Header from '../components/header';
@@ -45,7 +52,20 @@ export default function Home() {
       {/* Featured Product Section ..... */}
       <div className="container my-5">
         <h1 className='text-center fw-light'>Featured Product</h1>
-        
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
+            <div className="card" style={{ width: '23rem' }}></div>
+          </SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          ...
+        </Swiper>
       </div>
 
     
