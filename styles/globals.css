@@ -1,11 +1,16 @@
 body {
-    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-      'Arial', sans-serif;
+    /* font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+      'Arial', sans-serif; */
     padding: 0;
     max-width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .logo-container{
  width: 250px;
+}
+
+.swiper-button-next {
+  color: red;
 }
