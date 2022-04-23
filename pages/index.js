@@ -6,12 +6,41 @@ import styles from '../styles/Home.module.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
+
+// importing banner images .....
+import bannerOne from '../public/images/bannerOne.jpg';
+import BannerTwo from '../public/images/BannerTwo.jpg';
+import BannerThree from '../public/images/BannerThree.jpg';
+
 export default function Home() {
   return (
     <div  >
       
     <Header/>
-     <h1>Home Page</h1>
+   
+      {/* Bootstrap carausel ..... */}
+      <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <Image height={2000} src={bannerOne}  alt="Picture of the author" />
+          </div>
+          <div className="carousel-item">
+            <Image height={2000} src={BannerTwo}  alt="Picture of the author" />
+          </div>
+          <div className="carousel-item">
+            <Image height={2000} src={BannerThree}  alt="Picture of the author" />
+          </div>
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true" />
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true" />
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+
     
     </div>
   )
