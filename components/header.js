@@ -1,3 +1,8 @@
+import Image from 'next/image';
+
+//importing logo ...
+import logo from '../public/me.png'
+
 
 const header = () => {
   return (
