@@ -18,7 +18,7 @@ export default function Home() {
       
     <Header/>
    
-      {/* Bootstrap carausel ..... */}
+      {/* Banner Section ..... */}
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -39,6 +39,13 @@ export default function Home() {
           <span className="carousel-control-next-icon" aria-hidden="true" />
           <span className="visually-hidden">Next</span>
         </button>
+      </div>
+
+
+      {/* Featured Product Section ..... */}
+      <div className="container my-5">
+        <h1 className='text-center fw-light'>Featured Product</h1>
+        
       </div>
 
     
