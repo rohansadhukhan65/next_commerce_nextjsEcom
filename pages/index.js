@@ -2,9 +2,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React from "react";
 // Import Swiper React components
-import SwiperCore, { Navigation } from 'swiper';
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
-SwiperCore.use([Navigation]);
+SwiperCore.use([EffectCoverflow, Pagination]);
 
 // Import Swiper styles
 import 'swiper/css';
@@ -21,8 +21,7 @@ import BannerTwo from '../public/images/BannerTwo.jpg';
 import BannerThree from '../public/images/BannerThree.jpg';
 
 export default function Home() {
-  const navigationPrevRef = React.useRef();
-  const navigationNextRef = React.useRef();
+ 
   
   return (
     <div  >
@@ -57,14 +56,19 @@ export default function Home() {
       <div className="container my-5 p-5">
         <h1 className='text-center my-3 fw-light'>Featured Product</h1>
         <Swiper
-          spaceBetween={20}
-          slidesPerView={3}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
-          navigation={{
-            prevEl: navigationPrevRef.current,
-            nextEl: navigationNextRef.current,
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
           }}
+          pagination={true}
+          className="mySwiper"
                    
         >
           <SwiperSlide>
@@ -115,9 +119,6 @@ export default function Home() {
             {/* Slider Controlllers ..... */}
           <div className="swiper-button-prev" />
           <div className="swiper-button-next" />
-          <div ref="{navigationPrevRef}"/>
-            <div ref="{navigationNextRef}"/>
-           
 
         </Swiper>
       </div>
